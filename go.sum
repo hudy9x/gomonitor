@@ -1,0 +1,10 @@
+github.com/BurntSushi/xgb v0.0.0-20210121224620-deaf085860bc h1:7D+Bh06CRPCJO3gr2F7h1sriovOZ8BMhca2Rg85c2nk=
+github.com/BurntSushi/xgb v0.0.0-20210121224620-deaf085860bc/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
+github.com/LightningDev1/go-foreground v0.0.0-20240212172534-661cc0000e42 h1:3nkZh2ygGSuK/+CT0O9IG4Yho7WIO6QgzMwxEcn9xyc=
+github.com/LightningDev1/go-foreground v0.0.0-20240212172534-661cc0000e42/go.mod h1:VMeeC7SlbdMWtn59r8E47a0GZgmPwNd9btqlDi6Ql+Y=
+github.com/go-test/deep v1.1.0 h1:WOcxcdHcvdgThNXjw0t76K42FXTU7HpNQWHpA2HHNlg=
+github.com/go-test/deep v1.1.0/go.mod h1:5C2ZWiW0ErCdrYzpqxLbTX7MG14M9iiw8DgHncVwcsE=
+github.com/progrium/macdriver v0.5.0-preview.0.20240129182626-6a98f82290e5 h1:iqbseDydKyMyPcm6aKIjGFybLEKnqidR+mTdg/8/Drk=
+github.com/progrium/macdriver v0.5.0-preview.0.20240129182626-6a98f82290e5/go.mod h1:XHKjq4T5vdG2whD9bROezkhQfTclsD0PvOE4sLVW410=
+golang.org/x/sys v0.17.0 h1:25cE3gD+tdBA7lp7QfhuV+rJiE9YXTcS3VG1SqssI/Y=
+golang.org/x/sys v0.17.0/go.mod h1:/VUhepiaJMQUp4+oa/7Zr1D23ma6VTLIYjOOTFZPUcA=

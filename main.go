@@ -1,7 +1,16 @@
 package main
 
-import "log"
+import (
+	"gomonitor/utils"
+	"log"
+)
 
 func main() {
-	log.Println("Hello")
+	utils.GetIpNPcName()
+	if utils.IsLinux() {
+		log.Println("Hello linux guys")
+		// go monitor.RunLinux()
+		// select {}
+	}
+
 }
