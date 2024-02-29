@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	checkInterval = 5 * time.Second // Adjust this according to your preference
+	checkInterval = 3 * time.Second // Adjust this according to your preference
 )
 
 func RunMacos() {
@@ -23,7 +23,11 @@ func RunMacos() {
 
 // getActiveApplication retrieves the name of the currently active application using AppleScript.
 func getActiveApplication() string {
-	cmd := exec.Command("osascript", "-e", `tell application "System Events" to get name of (processes where frontmost is true)`)
+	cmd := exec.Command(
+		"osascript",
+		"-e",
+		`tell application "System Events" to get name of (processes where frontmost is true)`,
+	)
 	out, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error:", err)

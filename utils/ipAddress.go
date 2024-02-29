@@ -13,8 +13,8 @@ func GetIpNPcName() {
 	u, _ := user.Current()
 	hostname, _ := os.Hostname()
 
-	log.Println(u)
-	log.Println(hostname)
+	log.Println("user.Current", u)
+	log.Println("hostName", hostname)
 
 	addrs, err := net.InterfaceAddrs()
 

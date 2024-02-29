@@ -4,7 +4,9 @@ package monitor
 
 import (
 	"fmt"
+	"log"
 	"syscall"
+	"time"
 	"unsafe"
 
 	"golang.org/x/sys/windows"
@@ -14,6 +16,7 @@ var (
 	mod                     = windows.NewLazyDLL("user32.dll")
 	procGetWindowText       = mod.NewProc("GetWindowTextW")
 	procGetWindowTextLength = mod.NewProc("GetWindowTextLengthW")
+	procGetProcessById      = mod.NewProc("GetWindowThreadProcessId")
 )
 
 type (
@@ -40,6 +43,13 @@ func GetWindowText(hwnd HWND) string {
 	return syscall.UTF16ToString(buf)
 }
 
+func getAppWindowName(hwnd HWND) {
+	r1, r2, _ := procGetProcessById.Call(uintptr(hwnd))
+
+	log.Println("Get App Name", r1, r2)
+
+}
+
 func getWindow(funcName string) uintptr {
 	proc := mod.NewProc(funcName)
 	hwnd, _, _ := proc.Call()
@@ -49,8 +59,13 @@ func getWindow(funcName string) uintptr {
 func RunWindow() {
 	for {
 		if hwnd := getWindow("GetForegroundWindow"); hwnd != 0 {
+			log.Println("=============================")
 			text := GetWindowText(HWND(hwnd))
-			fmt.Println("window :", text, "# hwnd:", hwnd)
+
+			fmt.Println("window :", text)
+			fmt.Println("# hwnd:", hwnd)
+
+			time.Sleep(3 * time.Second)
 		}
 	}
 }
