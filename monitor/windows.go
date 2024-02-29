@@ -4,6 +4,7 @@ package monitor
 
 import (
 	"fmt"
+	"gomonitor/utils"
 	"log"
 	"syscall"
 	"time"
@@ -64,6 +65,8 @@ func RunWindow() {
 
 			fmt.Println("window :", text)
 			fmt.Println("# hwnd:", hwnd)
+
+			utils.WriteLog(time.Now().Format(time.RFC3339) + " " + text)
 
 			time.Sleep(3 * time.Second)
 		}
