@@ -2,15 +2,18 @@ package main
 
 import (
 	"gomonitor/monitor"
-	req "gomonitor/request"
 	"gomonitor/utils"
 	"log"
+	"os"
 )
 
 func main() {
+	Home, _ := os.UserHomeDir()
+	log.Println("home user", Home)
+
 	utils.GetIpNPcName()
-	req.Post()
-	// this function
+	// req.Post()
+
 	if utils.IsLinux() {
 		log.Println("Hello linux guys")
 		go monitor.RunLinux()

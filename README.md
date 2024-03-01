@@ -16,8 +16,8 @@ Run tool
 $ go run main.go
 ```
 
-Build tool
+Build command for Windows. The `-o` option mean output file, `-ldflags="-H windowsgui"` this option tell Windows hide Terminal as running.
 
 ```shell
-$ go build main.go
+$ go build -o gomonitor.exe -ldflags="-H windowsgui" ./main.go
 ```
